@@ -55,7 +55,7 @@
                                     <a class="nav-link ms-5 me-5" href="{{url('/regi')}}">Registration</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">Contact</a>
+                                    <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">contact</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link ms-5 me-5" href="https://bsfmstu.ac.bd/" target="_blank">BSFMSTU</a>

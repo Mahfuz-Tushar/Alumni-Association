@@ -25,10 +25,9 @@ class StudentsController extends Controller
     public function store(request $request)
     {
         $request->validate([
-            'id'=>'required',
             'name'=>'required',
             'department'=>'required',
-            'session'=>'required',
+            'sess_ion'=>'required',
             'address'=>'required',
             'passing_year'=>'required',
             'gender'=>'required',
@@ -39,10 +38,9 @@ class StudentsController extends Controller
         ]);
 
         User::create([
-          'id'=>$request->id,
           'name'=>$request->name,
           'department'=>$request->department,
-          'session'=>$request->session,
+          'sess_ion'=>$request->sess_ion,
           'address'=>$request->address,
           'passing_year'=>$request->passing_year,
           'gender'=>$request->gender,
@@ -67,10 +65,9 @@ class StudentsController extends Controller
     {
         $user = User::findorfail($id);
         $request->validate([
-            'id'=>'required',
             'name'=>'required',
             'department'=>'required',
-            'session'=>'required',
+            'sess_ion'=>'required',
             'address'=>'required',
             'passing_year'=>'required',
             'gender'=>'required',
@@ -81,10 +78,9 @@ class StudentsController extends Controller
         ]);
 
         User::where('id',$id)->update([
-          'id'=>$request->id,
           'name'=>$request->name,
           'department'=>$request->department,
-          'session'=>$request->session,
+          'sess_ion'=>$request->sess_ion,
           'address'=>$request->address,
           'passing_year'=>$request->passing_year,
           'gender'=>$request->gender,
@@ -100,7 +96,7 @@ class StudentsController extends Controller
     {
         $user = User::find($id); 
         $user->delete();
-        return redirect('/')->with('status',"data deleted succeswsfully");
+        return redirect('/dashboard')->with('status',"data deleted succeswsfully");
     }
     
 

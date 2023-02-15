@@ -38,7 +38,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav ">
                                 <li class="nav-item">
-                                    <a class="nav-link active me-5" aria-current="page" href="/index01.html">Home</a>
+                                    <a class="nav-link active me-5" aria-current="page" href="{{url('/')}}">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle ms-5 me-5" href="#" role="button"
@@ -46,15 +46,15 @@
                                         About
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/our-mission.html">Our Mission</a></li>
-                                        <li><a class="dropdown-item" href="/cons.html">Constitution</a></li>
+                                        <li><a class="dropdown-item" href="{{url('/ourmission')}}">Our Mission</a></li>
+                                        <li><a class="dropdown-item" href="{{url('/cons')}}">Constitution</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="regi.html">Registration</a>
+                                    <a class="nav-link ms-5 me-5" href="{{url('/regi')}}">Registration</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="contact.html">Contact</a>
+                                    <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">Contact</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link ms-5 me-5" href="https://bsfmstu.ac.bd/"
@@ -71,34 +71,47 @@
 
 
     <section class="nav-bg-color mt-5">
-        <h3 class="text-center pt-5">Contact</h3>
+        <h3 class="text-center pt-5"></h3>
+        <form action="{{route('search')}}" method="POST">
+            @csrf
 
         <div class="w-75 mx-auto">
-            <!-- E-Mail Input -->
-            <div class="mb-3 pt-5">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            {{-- <!-- E-Mail Input -->
+            <div class="mb-3 pt-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" aria-describedby="emailHelp">
+                <div id="" class="form-text"></div>
+            </div> --}}
+            <div>
+                <x-label for="name" :value="__('name')" /><br>
+
+                <x-input id="name" style=" " class="block mt-1 w-full" type="text" name="name" :value="old('Department')" required autofocus />
+            </div>
+            <div>
+                <x-label for="Department" :value="__('Department')" /> <br>
+
+                <x-input id="Department" style=" " class="block mt-1 w-full" type="text" name="department" :value="old('Department')"  autofocus />
             </div>
 
-            <!-- Phone Input -->
+            {{-- <!-- Phone Input -->
             <div class="mb-3 pt-5">
                 <label for="exampleInputEmail1" class="form-label">Phone Numbe : </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your number with anyone else.</div>
-            </div>
-            <br>
+            </div> --}}
+            
 
-            <!-- Input : Message  -->
+            {{-- <!-- Input : Message  -->
             <label for="Message">Message</label>
             <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
                     style="height: 450px"></textarea>
                 <label for="floatingTextarea2"></label>
-            </div>
-            <br>
+            </div> --}}
+            
             <!-- sent Message  -->
-            <button type="button" class="btn btn-outline-success">Sent</button>
+            <br>
+            <button type="submit" class="btn btn-outline-success">Search</button>
             <br><br>
         </div>
     </section>
@@ -118,6 +131,7 @@
                 Developed by "GROUP - 6"
             </p>
         </div>
+    </form>
     </footer>
 
     <!-- script  -->

@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('add.store') }}">
             @csrf
 
             <!-- Name -->
@@ -42,7 +42,7 @@
                     
     
  
-                  " class="block mt-1 w-full" type="text" name="session" :value="old('Session')" required autofocus />
+                  " class="block mt-1 w-full" type="text" name="sess_ion" :value="old('Sess_ion')" required autofocus />
             </div>
             <br>
             <!-- Address -->

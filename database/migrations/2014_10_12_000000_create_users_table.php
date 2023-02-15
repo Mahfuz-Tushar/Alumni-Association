@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('department')->nullable();
             $table->string('is_admin')->nullable();
-            $table->string('session')->nullable();
+            $table->string('sess_ion')->nullable();
             $table->string('address')->nullable();
             $table->string('passing_year')->nullable();
             $table->string('gender')->nullable();

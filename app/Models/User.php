@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'department',
         'is_admin',
-         'session',
+         'sess_ion',
          'address',
          'passing_year',
         'gender',

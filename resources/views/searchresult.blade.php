@@ -38,7 +38,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav ">
                                 <li class="nav-item">
-                                    <a class="nav-link active me-5" aria-current="page" href="{{url('index')}}">Home</a>
+                                    <a class="nav-link active me-5" aria-current="page" href="{{url('/')}}">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle ms-5 me-5" href="#" role="button"
@@ -46,20 +46,21 @@
                                         About
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{url('our-mission')}}">Our Mission</a></li>
-                                        <li><a class="dropdown-item" href="{{url('cons')}}">Constitution</a></li>
+                                        <li><a class="dropdown-item" href="{{url('/ourmission')}}">Our Mission</a></li>
+                                        <li><a class="dropdown-item" href="{{url('/cons')}}">Constitution</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="{{url('regi')}}">Registration</a>
+                                    <a class="nav-link ms-5 me-5" href="{{url('/regi')}}">Registration</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="{{url('contact')}}">Contact</a>
+                                    <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">Contact</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link ms-5 me-5" href="https://bsfmstu.ac.bd/" target="_blank">BSFMSTU</a>
+                                    <a class="nav-link ms-5 me-5" href="https://bsfmstu.ac.bd/"
+                                        target="_blank">BSFMSTU</a>
                                 </li>
-    
+
                             </ul>
                         </div>
                     </div>
@@ -68,48 +69,35 @@
         </div>
     </head>
 
+
     <section class="nav-bg-color mt-5">
-        <h3 class="text-center mx-auto mt-5">Constitution</h3>
-        <div class="card-width mx-auto mt-5 text-justify">
-            <p class="pt-5">The objective of the alumni association of Bangamata Sheikh Fojilatunnesa Mujib Science &
-                Technology
-                University may vary, but typically the main goals of such organizations are to:</p>
-            <br>
-            <h6>1</h6>
-            <p>To foster a strong and lasting relationship between alumni and Bangamata Sheikh Fojilatunnesa Mujib
-                Science & Technology University.</p>
-            <h6>2</h6>
-            <br>
-            <p>Support the university and its current students: Alumni associations often work to support the university
-                by providing funding for scholarships, facilities, and other initiatives.</p>
-            <h6>3</h6>
-            <br>
-            <p>Provide professional development opportunities: Many alumni associations offer events, workshops, and
-                networking opportunities to help alumni develop professionally.</p>
-            <h6>4</h6>
-            <br>
-            <p>Promote the university and its achievements: Alumni associations often act as ambassadors for their
-                university, promoting its accomplishments and helping to raise its profile.</p>
-            <h6>5</h6>
-            <br>
-            <p>To foster a sense of pride, loyalty, and lifelong commitment to the university among alumni.</p>
-            <h6>6</h6>
-            <br>
-            <p>To support the university's mission and vision by promoting its reputation and values..</p>
-            <h6>4</h6>
-            <br>
-            <p>Promote the university and its achievements: Alumni associations often act as ambassadors for their
-                university, promoting its accomplishments and helping to raise its profile.</p>
-            <h6>4</h6>
-            <br>
-            <p>Promote the university and its achievements: Alumni associations often act as ambassadors for their
-                university, promoting its accomplishments and helping to raise its profile.</p>
-            <h6>4</h6>
-            <br>
-            <p>Promote the university and its achievements: Alumni associations often act as ambassadors for their
-                university, promoting its accomplishments and helping to raise its profile.</p>
-        </div>
+        <h3 class="text-center pt-5"></h3>
+        
+        @foreach ($search as $item)
+        <div class="card mx-md-5 mt-md-3">
+     <h5 class="card-header">{{$item->name}}</h5>
+     <div class="card-body">
+       <h6 class="card-title">department <b>{{$item->department}}</b></h5>
+       <p class="card-text">email: <b>{{$item->email}}</b></br>
+        passing_year: <b>{{$item->passing_year}}</b></br>
+        Gender: <b>{{$item->gender}}</b></br>
+        current_job: <b>{{$item->current_job}}</b></br>
+        Address: <b>{{$item->address}}</b></br>
+        sess_ion: <b>{{$item->sess_ion}}</b></br>
+      </p>
+        {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+     </div>
+  </div>
+
+     @endforeach
+
+            
+           
     </section>
+
+
+
+
 
 
     <footer>
@@ -122,6 +110,7 @@
                 Developed by "GROUP - 6"
             </p>
         </div>
+    
     </footer>
 
     <!-- script  -->

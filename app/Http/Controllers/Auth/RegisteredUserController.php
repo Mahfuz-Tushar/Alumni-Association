@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'department' => ['required', 'string', 'max:255'],
-            'session' => ['required', 'string', 'max:255'],
+            'sess_ion' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'passing_year' => ['required', 'string', 'max:255'],
             'gender' => ['required', 'string', 'max:255'],

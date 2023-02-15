@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\User;
 
 class DemoController extends Controller
 {
@@ -19,13 +20,27 @@ class DemoController extends Controller
     function cons(){
         return view ("cons");
     }
-    function search(){
-        return view ("search");
+    function ourMission(){
+        return view ("ourMission");
+    }
+    function search(Request $request){
+        //dd($request ->all());
+        $name= $request->name;
+        $department=$request->department;
+        $search = User::when($name, function ($query, $name) {
+            return $query->where('name', 'like', "%{$name}%");
+                  })->when($request->department, function ($query, $department) {
+                      return $query->where('department', 'like', "%{$department}%");
+                  }, function ($query) {
+                      return $query->orderByDesc('id');
+                  })->get();
+        //dd($search);
+        return view ('searchresult',compact('search'));
     }
     function demo(Request $request)
     {
         $name=$request->name;
-        $category=$rrequest->email;
+        $category=$request->email;
         $data=DB::table('user')->where('name',$name)->where('email',$category)->get();
         return view('table',compact('data'));
     }

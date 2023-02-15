@@ -16,12 +16,14 @@ use App\Models\User;
 |
 */
 
-Route::get('/', [DemoController::class, 'index']);
-Route::get('/about', [DemoController::class, 'about']);
-Route::get('/contact', [DemoController::class, 'contact']);
-Route::get('/search', [DemoController::class, 'search'])->name('search');
+Route::get('/', [DemoController::class, 'index'])->name('home');
+Route::get('/about', [DemoController::class, 'about'])->name('about');
+Route::get('/contact', [DemoController::class, 'contact'])->name('contact');
+Route::get('/our-mission', [DemoController::class, 'ourMission'])->name('ourMission');
+route::get('/cons', [DemoController::class, 'cons'])->name('cons');
+Route::post('/search', [DemoController::class, 'search'])->name('search');
 Route::get('/table', [DemoController::class, 'onselect'])->name('select');
-//Route::get('/dashboard',[StudentsController::class,'dashboard'])->name('add.dashboard');
+Route::get('/dashboard',[StudentsController::class,'dashboard'])->name('add.dashboard');
 Route::get('/create',[StudentsController::class,'create'])->name('add.create');
 Route::post('/store',[StudentsController::class,'store'])->name('add.store'  );
 Route::get('/edit/{id}',[StudentsController::class,'edit'])->name('add.edit');
@@ -35,15 +37,13 @@ Route::get('/regi/custom',[StudentsController::class,'regiShowCustom'])->name('r
 // Route::get('/home', function () {
 //     return view('index');
 // });
-Route::get('/', function () {
-    return view('index');
-})->name('home');
-Route::get('/our-mission', function () {
-    return view('ourMission');
-});
-Route::get('/cons', function () {
-    return view('cons');
-});
+
+//Route::get('/our-mission', function () {
+    //return view('ourMission');
+//});
+// Route::get('/cons', function () {
+//     return view('cons');
+// });
 
 
 

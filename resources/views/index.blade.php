@@ -42,7 +42,7 @@
                                 <a class="nav-link active me-5" aria-current="page" href="{{url('/')}}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle ms-5 me-5" href="#" role="button"
+                                <a class="nav-link dropdown-toggle ms-5 me-5" href="{{url('/about')}}" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     About
                                 </a>
@@ -55,7 +55,7 @@
                                 <a class="nav-link ms-5 me-5" href="{{url('/regi')}}">Registration</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">Contact</a>
+                                <a class="nav-link ms-5 me-5" href="{{url('/contact')}}">contact</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link ms-5 me-5" href="https://bsfmstu.ac.bd/" target="_blank">BSFMSTU</a>
